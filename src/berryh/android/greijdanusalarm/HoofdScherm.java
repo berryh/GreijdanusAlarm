@@ -5,13 +5,24 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+import berryh.android.greijdanusalarm.Roosters.DagRoosterBase;
+import berryh.android.greijdanusalarm.Roosters.WeekRoosterBase;
+
+import java.util.Calendar;
 
 public class HoofdScherm extends Activity {
+
+    private TextView volgendeLesText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hoofdscherm);
+        volgendeLesText = (TextView)findViewById(R.id.hoofdscherm_textview_tijd_volgende_les_actual);
+        Calendar cal = Calendar.getInstance();
+        cal.setFirstDayOfWeek(Calendar.MONDAY);
+        int day = cal.get(Calendar.DAY_OF_WEEK);
     }
 
 
@@ -28,8 +39,10 @@ public class HoofdScherm extends Activity {
     	switch(item.getItemId()){
     	case R.id.menu_item_hoofdscherm_instellingen:
     		startActivity(new Intent(this, InstellingenScherm.class));
+            return true;
     	case R.id.menu_item_instellingen_hoofdscherm:
     		startActivity(new Intent(this, this.getClass()));
+            return true;
     	}
     	
     	return false;

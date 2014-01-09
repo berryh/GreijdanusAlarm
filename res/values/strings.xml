@@ -5,6 +5,6 @@
     <string name="menu_option_instellingen">Instellingen</string>
     <string name="welcome">Welkom bij de Greijdanus Alarm App</string>
     <string name="instellingen">Instellingen</string>
-    <string name="menu_option_hoofdscherm">Terug naar hoofdscherm</string>
+    <string name="menu_option_hoofdscherm">Terug naar hoofdscherm</string><string name="hoofdscherm_huidige_tijd">Tijd:</string>
 
 </resources>
