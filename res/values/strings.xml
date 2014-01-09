@@ -2,7 +2,9 @@
 <resources>
 
     <string name="app_name">Greijdanus Alarm</string>
-    <string name="action_settings">Instellingen</string>
+    <string name="menu_option_instellingen">Instellingen</string>
     <string name="welcome">Welkom bij de Greijdanus Alarm App</string>
+    <string name="instellingen">Instellingen</string>
+    <string name="menu_option_hoofdscherm">Terug naar hoofdscherm</string>
 
 </resources>
