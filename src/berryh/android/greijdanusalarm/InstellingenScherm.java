@@ -1,15 +1,17 @@
 package berryh.android.greijdanusalarm;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 
 public class InstellingenScherm extends Activity{
 	
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hoofdscherm);
+        setContentView(R.layout.activity_instellingen);
     }
 
 
@@ -20,4 +22,16 @@ public class InstellingenScherm extends Activity{
         return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.menu_item_instellingen_hoofdscherm:
+                startActivity(new Intent(this, HoofdScherm.class));
+                return true;
+        }
+
+        return false;
+
+    }
 }

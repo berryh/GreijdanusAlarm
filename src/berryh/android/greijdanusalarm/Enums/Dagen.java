@@ -1,12 +1,13 @@
 package berryh.android.greijdanusalarm.Enums;
 
-/**
- * Created by Berry Holtrust on 9-1-14.
- */
-public enum Dagen {
-    MAANDAG,DINSDAG,WOENSDAG,DONDERDAG,VRIJDAG;
+import java.util.Calendar;
 
-    public String toString(Dagen dag){
+/**
+ * Created by Berry Holtrust on 10-1-14.
+ */
+public class Dagen {
+
+    public static String toString(EnumDagen dag) {
         switch (dag){
             case MAANDAG:
                 return "Maandag";
@@ -23,24 +24,24 @@ public enum Dagen {
         }
     }
 
-    public Dagen intToDag(int dag){
+    public static EnumDagen intToDag(int dag) {
         switch (dag){
             case 1:
-                return MAANDAG;
+                return EnumDagen.MAANDAG;
             case 2:
-                return DINSDAG;
+                return EnumDagen.DINSDAG;
             case 3:
-                return WOENSDAG;
+                return EnumDagen.WOENSDAG;
             case 4:
-                return DONDERDAG;
+                return EnumDagen.DONDERDAG;
             case 5:
-                return VRIJDAG;
+                return EnumDagen.VRIJDAG;
             default:
                 return null;
         }
     }
 
-    public int dagToIntNormal(Dagen dag){
+    public static int dagToIntNormal(EnumDagen dag) {
         switch (dag){
             case MAANDAG:
                 return 1;
@@ -57,7 +58,14 @@ public enum Dagen {
         }
     }
 
-    public int dagToIntArray(Dagen dag){
+    public static int dagToIntArray(EnumDagen dag) {
         return dagToIntNormal(dag)+1;
+    }
+
+    public static EnumDagen getCurrentDag() {
+        Calendar cal = Calendar.getInstance();
+        cal.setFirstDayOfWeek(Calendar.MONDAY);
+        int day = cal.get(Calendar.DAY_OF_WEEK);
+        return intToDag(day);
     }
 }

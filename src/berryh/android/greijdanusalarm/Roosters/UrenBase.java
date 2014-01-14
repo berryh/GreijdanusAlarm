@@ -10,8 +10,8 @@ import java.util.Calendar;
 public class UrenBase {
 
     private SimpleDateFormat parser = new SimpleDateFormat("HH:mm");
-    private Calendar begin;
-    private Calendar eind;
+    private Calendar begin = Calendar.getInstance();
+    private Calendar eind = Calendar.getInstance();
     private boolean heeftLes;
 
     public UrenBase(String beginLes, String eindLes, boolean heeftLes) {
@@ -26,15 +26,15 @@ public class UrenBase {
 
     }
 
-    public Calendar getBegin(){
+    public Calendar getBegin() {
         return begin;
     }
 
-    public Calendar getEind(){
+    public Calendar getEind() {
         return eind;
     }
 
-    public boolean isHeeftLes(){
+    public boolean isHeeftLes() {
         return heeftLes;
     }
 
