@@ -43,7 +43,20 @@ public class RoosterHandler {
             return 0;
         }
 
-        for (int uur = 0; uur < dagrooster.uren.size(); uur++) {
+        try {
+            if (dagrooster.uren.size() == 0) {
+                System.out.println("Dagrooster Uren Size == 0");
+                return 0;
+            }
+        } catch (NullPointerException e) {
+
+            System.out.println("For some reason, dagrooster or dagrooster.uren is null");
+
+            e.printStackTrace();
+            return 0;
+        }
+
+        for (int uur = 1; uur < dagrooster.uren.size(); uur++) {
             UrenBase lesuur = null;
             try {
                 lesuur = dagrooster.uren.get(uur);

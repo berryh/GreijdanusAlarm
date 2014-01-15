@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+ http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>berryh.android</groupId>
+    <artifactId>greijdanusalarm</artifactId>
+    <version>0.1-SNAPSHOT</version>
+    <packaging>apk</packaging>
+    <name>Greijdanus Alarm</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.google.android</groupId>
+            <artifactId>android</artifactId>
+            <version>4.1.1.4</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+    <scm>
+        <connection>scm:git:git@github.com:berryh/GreijdanusAlarm.git</connection>
+        <developerConnection>scm:git:git@github.com:berryh/GreijdanusAlarm.git</developerConnection>
+        <tag>HEAD</tag>
+        <url>git@github.com:berryh/GreijdanusAlarm.git</url>
+    </scm>
+
+
+    <build>
+        <sourceDirectory>src</sourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>buildnumber-maven-plugin</artifactId>
+                <version>1.2</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>create</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <format>{0,number}</format>
+                    <items>
+                        <item>buildNumber</item>
+                    </items>
+                    <doCheck>false</doCheck>
+                    <doUpdate>false</doUpdate>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                <artifactId>android-maven-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <sdk>
+                        <path>G:\Program Files (x86)\Android\sdk</path>
+                        <platform>17</platform>
+                    </sdk>
+                    <undeployBeforeDeploy>true</undeployBeforeDeploy>
+                    <zipalign>
+                        <skip>false</skip>
+                        <verbose>true</verbose>
+                        <inputApk>${project.build.directory}/${project.artifactId}-${project.version}.apk</inputApk>
+                        <!-- directly use property name defined in external properties file here -->
+                        <outputApk>${project.build.directory}/${project.artifactId}-${buildNumber}-aligned.apk
+                        </outputApk>
+                    </zipalign>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>alignApk</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>zipalign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <extensions>true</extensions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+
+
+        </plugins>
+    </build>
+
+</project>
