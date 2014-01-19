@@ -1,28 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="berryh.android.greijdanusalarm"
-    android:versionCode="1"
-    android:versionName="1.0" android:installLocation="preferExternal">
+          package="berryh.android.greijdanusalarm"
+          android:versionCode="1"
+          android:versionName="1.0" android:installLocation="preferExternal">
 
     <uses-sdk
-        android:minSdkVersion="9"
-        android:targetSdkVersion="17" />
+            android:minSdkVersion="9"
+            android:targetSdkVersion="17"/>
 
     <application
-        android:allowBackup="true"
-        android:icon="@drawable/greijdanus"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme" android:name="GreijdanusAlarm">
+            android:allowBackup="true"
+            android:icon="@drawable/greijdanus"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme" android:name="GreijdanusAlarm">
         <activity
-            android:name="berryh.android.greijdanusalarm.HoofdScherm"
-            android:label="@string/app_name" >
+                android:name="berryh.android.greijdanusalarm.HoofdScherm"
+                android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="berryh.android.greijdanusalarm.InstellingenScherm" android:label="@string/instellingen"></activity>
+        <activity android:name="berryh.android.greijdanusalarm.InstellingenScherm"
+                  android:label="@string/instellingen"></activity>
+        <receiver android:name=".Service.NotificationReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE">
+                </action>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

@@ -7,22 +7,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
-import berryh.android.greijdanusalarm.Enums.Dagen;
 import berryh.android.greijdanusalarm.Enums.EnumDagen;
 import berryh.android.greijdanusalarm.Handler.RoosterHandler;
-import berryh.android.greijdanusalarm.Roosters.DagRoosterBase;
+import berryh.android.greijdanusalarm.jtRooster.WeekRooster;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.HashMap;
 
 public class HoofdScherm extends Activity {
 
     private TextView volgendeLesText;
-    private EnumDagen lesdag = Dagen.getCurrentDag();
+    //private EnumDagen lesdag = Dagen.getCurrentDag();
+    private EnumDagen lesdag = EnumDagen.MAANDAG;
     private RoosterHandler rHandler = new RoosterHandler();
-    private HashMap<EnumDagen, DagRoosterBase> weekRooster;
+    //private HashMap<EnumDagen, DagRoosterBase> weekRooster;
+    private WeekRooster weekRooster;
     private SimpleDateFormat parser = new SimpleDateFormat("HH:mm");
+    private GreijdanusAlarm ga;
 
 
     @SuppressWarnings("deprecated")
@@ -31,10 +31,19 @@ public class HoofdScherm extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hoofdscherm);
         volgendeLesText = (TextView) findViewById(R.id.hoofdscherm_textview_tijd_volgende_les_actual);
+        ga = (GreijdanusAlarm) super.getApplication();
+        System.out.println(ga.dt.getMonthOfYear());
+
 
         Toast.makeText(this, "Welkom!", 5).show();
 
-        weekRooster = rHandler.setupRooster();
+        weekRooster = rHandler.setupRooster2(ga, getApplicationContext());
+        if (lesdag != null) {
+            rHandler.setupNotifications(lesdag);
+        }
+
+
+        /*
         if (lesdag != null) {
             //int lesuur = rHandler.getCurrentLesuur(weekRooster.get(lesdag));
             int lesuur = rHandler.getCurrentLesuur(weekRooster.get(1));
@@ -52,11 +61,25 @@ public class HoofdScherm extends Activity {
                 Toast.makeText(this, "Het huidige lesuur is 0, je hebt vandaag waarschijnlijk geen school meer of je hebt weekend", 5).show();
             }
         }
+        */
+/*
+        DateTime notification = ga.dt.withTime(ga.dt.getHourOfDay(),ga.dt.getMinuteOfHour() + 2,0,0);
+        //Calendar notification = Calendar.getInstance();
+        //notification.add(Calendar.MINUTE, 2);
+        Intent i = new Intent(super.getBaseContext(), NotificationReceiver.class);
+        i.putExtra("alarm_message", "Greijdanus Alarm Melding, je hebt les");
+        PendingIntent pi = PendingIntent.getBroadcast(this, 192837, i, PendingIntent.FLAG_UPDATE_CURRENT);
 
+        AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);
+        System.out.println(notification.toDate().getTime());
+        System.out.println(notification.toCalendar(Locale.ROOT).getTimeInMillis());
+        System.out.println(System.currentTimeMillis());
+        am.set(AlarmManager.RTC_WAKEUP, notification.toCalendar(Locale.ROOT).getTimeInMillis(), pi);
+*/
 
         /*
 
-        getBaseContext().registerReceiver(new AlarmReciever(), new IntentFilter());
+        getBaseContext().registerReceiver(new NotificationReceiver(), new IntentFilter());
 
         Calendar cal = Calendar.getInstance();
         try{
@@ -84,7 +107,7 @@ public class HoofdScherm extends Activity {
         System.out.printf("Time of cal2 in MS: %s %s", cal2.getTime(), System.getProperty("line.separator"));
 
 
-        Intent intent = new Intent(this, AlarmReciever.class);
+        Intent intent = new Intent(this, NotificationReceiver.class);
         intent.putExtra("id", this.getTaskId());
         PendingIntent penintent = PendingIntent.getBroadcast(this, this.getTaskId(), intent, 0);
         AlarmManager alm = (AlarmManager) this.getSystemService(ALARM_SERVICE);
