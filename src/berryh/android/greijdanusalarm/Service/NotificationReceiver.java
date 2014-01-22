@@ -15,7 +15,7 @@ public class NotificationReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-
+        System.out.println("NotificationReceiver: onReceive is called");
         Notification.Builder mBuilder;
         if (intent.getExtras().getBoolean("state")) {
             mBuilder = new Notification.Builder(context).setSmallIcon(R.drawable.greijdanus).setContentTitle("Greijdanus Alarm").setContentText("Je les begint!");
@@ -23,20 +23,10 @@ public class NotificationReceiver extends BroadcastReceiver {
             mBuilder = new Notification.Builder(context).setSmallIcon(R.drawable.greijdanus).setContentTitle("Greijdanus Alarm").setContentText("Je les is afgelopen!");
         }
         NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        mNotificationManager.notify(1, mBuilder.build());
+        Notification notification = mBuilder.build();
+        notification.defaults |= Notification.DEFAULT_SOUND;
+        notification.defaults |= Notification.DEFAULT_VIBRATE;
 
-
-
-        /*
-        try {
-            Bundle bundle = intent.getExtras();
-            String message = bundle.getString("alarm_message");
-            Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
-        } catch (Exception e) {
-            Toast.makeText(context, "There was an error somewhere, but we still received an alarm", Toast.LENGTH_SHORT).show();
-            e.printStackTrace();
-
-        }
-        */
+        mNotificationManager.notify(1, notification);
     }
 }

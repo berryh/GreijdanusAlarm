@@ -4,14 +4,23 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.widget.TextView;
+import berryh.android.greijdanusalarm.Enums.Dagen;
 import berryh.android.greijdanusalarm.Enums.EnumDagen;
 import berryh.android.greijdanusalarm.GreijdanusAlarm;
+import berryh.android.greijdanusalarm.HoofdScherm;
+import berryh.android.greijdanusalarm.R;
 import berryh.android.greijdanusalarm.Roosters.DagRoosterBase;
 import berryh.android.greijdanusalarm.Roosters.UrenBase;
 import berryh.android.greijdanusalarm.Service.NotificationReceiver;
 import berryh.android.greijdanusalarm.jtRooster.WeekRooster;
 import org.joda.time.Interval;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
+import java.io.FileInputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -21,9 +30,16 @@ import java.util.*;
  */
 public class RoosterHandler {
 
+    private static final RoosterHandler INSTANCE = new RoosterHandler();
     private WeekRooster wRooster;
     private GreijdanusAlarm ga;
     private Context ct;
+    private HoofdScherm hs;
+
+    public static RoosterHandler instance() {
+        return INSTANCE;
+    }
+
 
     public HashMap<EnumDagen, DagRoosterBase> setupRooster() {
         HashMap<EnumDagen, DagRoosterBase> weekRooster = new HashMap<EnumDagen, DagRoosterBase>();
@@ -87,14 +103,51 @@ public class RoosterHandler {
         return 0;
     }
 
-    public WeekRooster setupRooster2(GreijdanusAlarm gb, Context cy) {
+    public WeekRooster setupRooster2(GreijdanusAlarm gb, Context cy, HoofdScherm ht) {
         ga = gb;
         ct = cy;
-        List<Boolean> lMaandag = new ArrayList<>(Arrays.asList(false, true, true, true, true, true, true));
-        List<Boolean> lDinsdag = new ArrayList<>(Arrays.asList(false, true, true, true, true, true, true));
-        List<Boolean> lWoensdag = new ArrayList<>(Arrays.asList(false, true, true, true, true, true, true));
-        List<Boolean> lDonderdag = new ArrayList<>(Arrays.asList(false, true, true, true, true, true, true));
-        List<Boolean> lVrijdag = new ArrayList<>(Arrays.asList(false, true, true, true, true, true, true));
+        hs = ht;
+        List<Boolean> lMaandag = new ArrayList<>();
+        List<Boolean> lDinsdag = new ArrayList<>();
+        List<Boolean> lWoensdag = new ArrayList<>();
+        List<Boolean> lDonderdag = new ArrayList<>();
+        List<Boolean> lVrijdag = new ArrayList<>();
+        try {
+            FileInputStream fis = ct.openFileInput("settings.json");
+            StringBuilder builder = new StringBuilder();
+            int ch;
+            while ((ch = fis.read()) != -1) {
+                builder.append((char) ch);
+            }
+            String jsonSettings = builder.toString();
+
+            System.out.println("RoosterHandler: jsonSettings String: " + jsonSettings);
+            JSONParser parser = new JSONParser();
+            try {
+                //JSONObject json = new JSONObject();
+                JSONObject json = (JSONObject) parser.parse(jsonSettings);
+
+                System.out.println("RoosterHandler: maandag object class type: " + json.get("maandag").getClass());
+
+
+                lMaandag = (ArrayList<Boolean>) json.get("maandag");
+                lDinsdag = (ArrayList<Boolean>) json.get("dinsdag");
+                lWoensdag = (ArrayList<Boolean>) json.get("woensdag");
+                lDonderdag = (ArrayList<Boolean>) json.get("donderdag");
+                lVrijdag = (ArrayList<Boolean>) json.get("vrijdag");
+            } catch (Exception e) {
+                System.out.println("RoosterHandler: JSON Exception Occured");
+                e.printStackTrace();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        if (lMaandag.isEmpty()) {
+            System.out.println("Rooster arrays are not loading properly");
+        }
+
 
         WeekRooster wr = new WeekRooster(lMaandag, lDinsdag, lWoensdag, lDonderdag, lVrijdag);
         wRooster = wr;
@@ -115,28 +168,98 @@ public class RoosterHandler {
         //System.out.println(System.currentTimeMillis());
         // am.set(AlarmManager.RTC_WAKEUP, notification.toCalendar(Locale.ROOT).getTimeInMillis(), pi);
 
-        if (lesdag == EnumDagen.MAANDAG) {
-            for (int j = 0; j < wRooster.lesweek.get(EnumDagen.MAANDAG).lesuren.size(); j++) {
-                Interval jIn = wRooster.lesweek.get(EnumDagen.MAANDAG).lesuren.get(j);
-                if (jIn == null) {
-                    continue;
-                }
-                if (jIn.getStart().isAfterNow()) {
-                    Intent in1 = new Intent(ct, NotificationReceiver.class);
-                    in1.putExtra("state", true);
-                    PendingIntent pi1 = PendingIntent.getBroadcast(ct, j, in1, PendingIntent.FLAG_UPDATE_CURRENT);
-                    am.set(AlarmManager.RTC_WAKEUP, jIn.getStart().toCalendar(Locale.ROOT).getTimeInMillis(), pi1);
-                }
-                if (jIn.getEnd().isAfterNow()) {
-                    Intent in2 = new Intent(ct, NotificationReceiver.class);
-                    in2.putExtra("state", false);
-                    PendingIntent pi2 = PendingIntent.getBroadcast(ct, j ^ 2, in2, PendingIntent.FLAG_UPDATE_CURRENT);
-                    am.set(AlarmManager.RTC_WAKEUP, jIn.getEnd().toCalendar(Locale.ROOT).getTimeInMillis(), pi2);
-                }
+        if (lesdag == null) {
+            System.out.println("RoosterHandler: lesdag is null");
+            return;
+        }
+        if (wRooster == null) {
+            System.out.println("RoosterHandler: wRooster is null");
+        }
+
+        for (int j = 0; j < wRooster.lesweek.get(lesdag).lesuren.size(); j++) {
+            Interval jIn = wRooster.lesweek.get(lesdag).lesuren.get(j);
+            if (jIn == null) {
+                continue;
+            }
+            if (jIn.getStart().isAfterNow()) {
+                Intent in1 = new Intent(ct, NotificationReceiver.class);
+                in1.putExtra("state", true);
+                PendingIntent pi1 = PendingIntent.getBroadcast(ct, j, in1, PendingIntent.FLAG_UPDATE_CURRENT);
+                am.set(AlarmManager.RTC_WAKEUP, jIn.getStart().toCalendar(Locale.ROOT).getTimeInMillis(), pi1);
+            }
+            if (jIn.getEnd().isAfterNow()) {
+                Intent in2 = new Intent(ct, NotificationReceiver.class);
+                in2.putExtra("state", false);
+                PendingIntent pi2 = PendingIntent.getBroadcast(ct, j ^ 2, in2, PendingIntent.FLAG_UPDATE_CURRENT);
+                am.set(AlarmManager.RTC_WAKEUP, jIn.getEnd().toCalendar(Locale.ROOT).getTimeInMillis(), pi2);
             }
         }
 
 
     }
 
+    public void setupNextLesTime(TextView volgendeLesText) {
+        EnumDagen lesdag = Dagen.getCurrentDag();
+
+        if (lesdag == null) {
+            return;
+        }
+        if (wRooster == null) {
+            System.out.println("RoosterHandler: wRooster is null");
+        }
+        if (volgendeLesText == null) {
+            System.out.println("RoosterHandler: volgendeLesText is null");
+            return;
+        }
+
+        for (int j = 0; j < wRooster.lesweek.get(lesdag).lesuren.size(); j++) {
+            Interval jIn = wRooster.lesweek.get(lesdag).lesuren.get(j);
+            if (jIn == null) {
+                System.out.println("RoosterHandler: jIn is null");
+                continue;
+            }
+            if (jIn.getStart().isBeforeNow() || jIn.getStart().isEqualNow()) {
+                System.out.println("RoosterHandler: isBeforeNow() or isEqualNow()");
+                DateTimeFormatter fmt = DateTimeFormat.forPattern("kk:mm");
+                try {
+                    TextView tv = (TextView) hs.findViewById(R.id.hoofdscherm_textview_tijd_volgende_les_actual);
+                    if (tv == null) {
+                        System.out.println("RoosterHandler: Aquired TextView tv is null");
+                    }
+                    System.out.println("RoosterHandler: Volgende Les DateTime To Text: " + fmt.print(jIn.getStart()));
+                    tv.setText(fmt.print(jIn.getStart()));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                return;
+            }
+        }
+
+    }
+
+    public String getNextLesTime() {
+        EnumDagen lesdag = Dagen.getCurrentDag();
+
+        if (lesdag == null) {
+            return null;
+        }
+        if (wRooster == null) {
+            System.out.println("RoosterHandler: wRooster is null");
+        }
+
+        for (int j = 0; j < wRooster.lesweek.get(lesdag).lesuren.size(); j++) {
+            Interval jIn = wRooster.lesweek.get(lesdag).lesuren.get(j);
+            if (jIn == null) {
+                System.out.println("RoosterHandler: jIn is null");
+                continue;
+            }
+            if (jIn.getStart().isBeforeNow() || jIn.getStart().isEqualNow()) {
+                System.out.println("RoosterHandler: isBeforeNow() or isEqualNow()");
+                DateTimeFormatter fmt = DateTimeFormat.forPattern("kk:mm");
+                System.out.println("RoosterHandler: fmt Time: " + fmt.print(jIn.getStart()));
+                return fmt.print(jIn.getStart());
+            }
+        }
+        return null;
+    }
 }

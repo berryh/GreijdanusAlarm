@@ -13,6 +13,9 @@ public class WeekRooster {
     public HashMap<EnumDagen, DagRooster> lesweek = new HashMap<>();
 
     public WeekRooster(List<Boolean> lMaandag, List<Boolean> lDinsdag, List<Boolean> lWoensdag, List<Boolean> lDonderdag, List<Boolean> lVrijdag) {
+        if (lMaandag.isEmpty()) {
+            System.out.println("Weekrooster: lMaandag is null");
+        }
         lesweek.put(EnumDagen.MAANDAG, new DagRooster(lMaandag));
         lesweek.put(EnumDagen.DINSDAG, new DagRooster(lDinsdag));
         lesweek.put(EnumDagen.WOENSDAG, new DagRooster(lWoensdag));

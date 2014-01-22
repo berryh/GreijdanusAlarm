@@ -6,41 +6,48 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.widget.Toast;
+import berryh.android.greijdanusalarm.Enums.Dagen;
 import berryh.android.greijdanusalarm.Enums.EnumDagen;
 import berryh.android.greijdanusalarm.Handler.RoosterHandler;
 import berryh.android.greijdanusalarm.jtRooster.WeekRooster;
-
-import java.text.SimpleDateFormat;
+import berryh.android.greijdanusalarm.lib.Constants;
 
 public class HoofdScherm extends Activity {
 
     private TextView volgendeLesText;
-    //private EnumDagen lesdag = Dagen.getCurrentDag();
-    private EnumDagen lesdag = EnumDagen.MAANDAG;
-    private RoosterHandler rHandler = new RoosterHandler();
+    private EnumDagen lesdag = Dagen.getCurrentDag();
+    //private EnumDagen lesdag = EnumDagen.MAANDAG;
+    private Constants constants = Constants.instance();
+    private RoosterHandler rHandler = RoosterHandler.instance();
     //private HashMap<EnumDagen, DagRoosterBase> weekRooster;
     private WeekRooster weekRooster;
-    private SimpleDateFormat parser = new SimpleDateFormat("HH:mm");
-    private GreijdanusAlarm ga;
+    //private SimpleDateFormat parser = new SimpleDateFormat("HH:mm");
+    private GreijdanusAlarm ga = (GreijdanusAlarm) super.getApplication();
+    private boolean settingsExist = false;
+    //private Bundle bundle;
 
 
     @SuppressWarnings("deprecated")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hoofdscherm);
-        volgendeLesText = (TextView) findViewById(R.id.hoofdscherm_textview_tijd_volgende_les_actual);
-        ga = (GreijdanusAlarm) super.getApplication();
-        System.out.println(ga.dt.getMonthOfYear());
-
-
-        Toast.makeText(this, "Welkom!", 5).show();
-
-        weekRooster = rHandler.setupRooster2(ga, getApplicationContext());
-        if (lesdag != null) {
-            rHandler.setupNotifications(lesdag);
+        //this.bundle = savedInstanceState;
+        //setContentView(R.layout.activity_hoofdscherm);
+        setContentView(R.layout.activity_loading);
+        constants.setDebug(false);
+        constants.setGreijdanusalarm((GreijdanusAlarm) getApplication());
+        constants.setHoofdscherm(this);
+        if (constants.isDebug()) {
+            lesdag = EnumDagen.MAANDAG;
         }
+
+
+        //System.out.println(getFilesDir());
+
+
+        //Toast.makeText(this, "Welkom!", 5).show();
+
+
 
 
         /*
@@ -117,6 +124,35 @@ public class HoofdScherm extends Activity {
 
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        setContentView(R.layout.activity_hoofdscherm);
+        volgendeLesText = (TextView) findViewById(R.id.hoofdscherm_textview_tijd_volgende_les_actual);
+        String[] files = fileList();
+        for (String file : files) {
+            if (file.equals("settings.json")) {
+                settingsExist = true;
+            }
+        }
+        if (!settingsExist) {
+            startActivityForResult(new Intent(this, InstellingenScherm.class), 1);
+        }
+        if (weekRooster == null) {
+            weekRooster = rHandler.setupRooster2(ga, getApplicationContext(), this);
+        }
+        if (lesdag != null) {
+            rHandler.setupNotifications(lesdag);
+        }
+        String nextLes = rHandler.getNextLesTime();
+        if (nextLes != null && volgendeLesText != null) {
+            volgendeLesText.setText(nextLes);
+        } else {
+            System.out.println("HoofdScherm: nextLes or volgendeLesText is null");
+        }
+
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -136,6 +172,15 @@ public class HoofdScherm extends Activity {
 
         return false;
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultcode, Intent data) {
+        switch (requestCode) {
+            case 1:
+                settingsExist = true;
+                System.out.println("Hoofdscherm: Activity InstellingenScherm is afgehandeld");
+        }
     }
 
 }
