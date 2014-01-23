@@ -1,5 +1,7 @@
 package berryh.android.greijdanusalarm.lib;
 
+import android.telephony.TelephonyManager;
+import berryh.android.greijdanusalarm.Enums.EnumDagen;
 import berryh.android.greijdanusalarm.GreijdanusAlarm;
 import berryh.android.greijdanusalarm.HoofdScherm;
 import berryh.android.greijdanusalarm.InstellingenScherm;
@@ -16,6 +18,8 @@ public class Constants {
     private GreijdanusAlarm greijdanusalarm;
     private InstellingenScherm instellingenscherm;
     private DateTime dt = new DateTime();
+    private TelephonyManager telephonyManager;
+    private EnumDagen lesdag;
 
     public static Constants instance() {
         return INSTANCE;
@@ -55,5 +59,21 @@ public class Constants {
 
     public DateTime getDt() {
         return dt;
+    }
+
+    public TelephonyManager getTelephonyManager() {
+        return telephonyManager;
+    }
+
+    public void setTelephonyManager(TelephonyManager telephonyManager) {
+        this.telephonyManager = telephonyManager;
+    }
+
+    public EnumDagen getLesdag() {
+        return lesdag;
+    }
+
+    public void setLesdag(EnumDagen lesdag) {
+        this.lesdag = lesdag;
     }
 }

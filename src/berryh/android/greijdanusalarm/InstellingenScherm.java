@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import berryh.android.greijdanusalarm.lib.Constants;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
@@ -54,7 +55,7 @@ public class InstellingenScherm extends Activity {
     private CheckBox vr5;
     private CheckBox vr6;
     private CheckBox vr7;
-    private GreijdanusAlarm ga = (GreijdanusAlarm) super.getApplication();
+    private GreijdanusAlarm ga = Constants.instance().getGreijdanusalarm();
     private List<Boolean> maandag = new ArrayList<Boolean>();
     private List<Boolean> dinsdag = new ArrayList<Boolean>();
     private List<Boolean> woensdag = new ArrayList<Boolean>();

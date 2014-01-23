@@ -14,6 +14,7 @@ import berryh.android.greijdanusalarm.Roosters.DagRoosterBase;
 import berryh.android.greijdanusalarm.Roosters.UrenBase;
 import berryh.android.greijdanusalarm.Service.NotificationReceiver;
 import berryh.android.greijdanusalarm.jtRooster.WeekRooster;
+import berryh.android.greijdanusalarm.lib.Constants;
 import org.joda.time.Interval;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -178,20 +179,22 @@ public class RoosterHandler {
 
         for (int j = 0; j < wRooster.lesweek.get(lesdag).lesuren.size(); j++) {
             Interval jIn = wRooster.lesweek.get(lesdag).lesuren.get(j);
+            System.out.println("RoosterHandler: j in setupNotifications: " + j);
+            System.out.println("RoosterHandler: User heeft les op uur -1 waar uur is: " + j);
             if (jIn == null) {
                 continue;
             }
-            if (jIn.getStart().isAfterNow()) {
+            if (jIn.getStart().isAfterNow() || jIn.getStart().isEqualNow()) {
                 Intent in1 = new Intent(ct, NotificationReceiver.class);
                 in1.putExtra("state", true);
                 PendingIntent pi1 = PendingIntent.getBroadcast(ct, j, in1, PendingIntent.FLAG_UPDATE_CURRENT);
-                am.set(AlarmManager.RTC_WAKEUP, jIn.getStart().toCalendar(Locale.ROOT).getTimeInMillis(), pi1);
+                am.set(AlarmManager.RTC_WAKEUP, jIn.getStartMillis(), pi1);
             }
-            if (jIn.getEnd().isAfterNow()) {
+            if (jIn.getEnd().isAfterNow() || jIn.getEnd().isEqualNow()) {
                 Intent in2 = new Intent(ct, NotificationReceiver.class);
                 in2.putExtra("state", false);
                 PendingIntent pi2 = PendingIntent.getBroadcast(ct, j ^ 2, in2, PendingIntent.FLAG_UPDATE_CURRENT);
-                am.set(AlarmManager.RTC_WAKEUP, jIn.getEnd().toCalendar(Locale.ROOT).getTimeInMillis(), pi2);
+                am.set(AlarmManager.RTC_WAKEUP, jIn.getEndMillis(), pi2);
             }
         }
 
@@ -238,17 +241,16 @@ public class RoosterHandler {
     }
 
     public String getNextLesTime() {
-        EnumDagen lesdag = Dagen.getCurrentDag();
 
-        if (lesdag == null) {
+        if (Constants.instance().getLesdag() == null) {
             return null;
         }
         if (wRooster == null) {
             System.out.println("RoosterHandler: wRooster is null");
         }
 
-        for (int j = 0; j < wRooster.lesweek.get(lesdag).lesuren.size(); j++) {
-            Interval jIn = wRooster.lesweek.get(lesdag).lesuren.get(j);
+        for (int j = 0; j < wRooster.lesweek.get(Constants.instance().getLesdag()).lesuren.size(); j++) {
+            Interval jIn = wRooster.lesweek.get(Constants.instance().getLesdag()).lesuren.get(j);
             if (jIn == null) {
                 System.out.println("RoosterHandler: jIn is null");
                 continue;

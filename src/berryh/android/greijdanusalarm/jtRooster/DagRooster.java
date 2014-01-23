@@ -29,7 +29,7 @@ public class DagRooster {
         System.out.println("DagRooster: isDebug: " + Constants.instance().isDebug());
         if (!Constants.instance().isDebug()) {
             if (heeftles.get(0)) {
-                lesuren.add(0, new Interval(new DateTime().withTime(8, 0, 0, 0), new DateTime().withTime(9, 0, 0, 0)));
+                lesuren.add(lesuren.size(), new Interval(new DateTime().withTime(8, 0, 0, 0), new DateTime().withTime(9, 0, 0, 0)));
             }
             if (heeftles.get(1)) {
                 lesuren.add(lesuren.size(), new Interval(new DateTime().withTime(9, 0, 0, 0), new DateTime().withTime(10, 5, 0, 0)));
@@ -53,7 +53,7 @@ public class DagRooster {
         } else {
             System.out.println("RoosterHandler: Begin DagRooster: " + dt.getHourOfDay() + ":" + dt.getMinuteOfHour());
             if (heeftles.get(0)) {
-                lesuren.add(0, new Interval(dt.plusMinutes(2), dt.plusMinutes(3)));
+                lesuren.add(lesuren.size(), new Interval(dt.plusMinutes(2), dt.plusMinutes(3)));
             }
             if (heeftles.get(1)) {
                 lesuren.add(lesuren.size(), new Interval(dt.plusMinutes(4), dt.plusMinutes(5)));
@@ -75,16 +75,5 @@ public class DagRooster {
                 lesuren.add(lesuren.size(), new Interval(dt.plusMinutes(14), dt.plusMinutes(15)));
             }
         }
-
-
-        /*
-        //TODO Debugging Times
-        if (heeftles.get(5)) {
-            lesuren.add(lesuren.size(), new Interval(new DateTime().withTime(23, 41, 0, 0), new DateTime().withTime(23, 42, 0, 0)));
-        }
-        if (heeftles.get(6)) {
-            lesuren.add(lesuren.size(), new Interval(new DateTime().withTime(23, 43, 0, 0), new DateTime().withTime(23, 44, 0, 0)));
-        }
-        */
     }
 }

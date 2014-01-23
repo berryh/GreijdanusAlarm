@@ -1,8 +1,10 @@
 package berryh.android.greijdanusalarm;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -15,7 +17,7 @@ import berryh.android.greijdanusalarm.lib.Constants;
 public class HoofdScherm extends Activity {
 
     private TextView volgendeLesText;
-    private EnumDagen lesdag = Dagen.getCurrentDag();
+    //private EnumDagen lesdag = Dagen.getCurrentDag();
     //private EnumDagen lesdag = EnumDagen.MAANDAG;
     private Constants constants = Constants.instance();
     private RoosterHandler rHandler = RoosterHandler.instance();
@@ -34,12 +36,19 @@ public class HoofdScherm extends Activity {
         //this.bundle = savedInstanceState;
         //setContentView(R.layout.activity_hoofdscherm);
         setContentView(R.layout.activity_loading);
-        constants.setDebug(false);
+        //constants.setDebug(true);
+        constants.setTelephonyManager((TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE));
         constants.setGreijdanusalarm((GreijdanusAlarm) getApplication());
         constants.setHoofdscherm(this);
+        //TODO Remember to turn this off on publish or real world test use
+        constants.setDebug(true);
         if (constants.isDebug()) {
-            lesdag = EnumDagen.MAANDAG;
+            constants.setLesdag(EnumDagen.MAANDAG);
+        } else {
+            constants.setLesdag(Dagen.getCurrentDag());
         }
+
+        System.out.println("Debug Mode: " + constants.isDebug());
 
 
         //System.out.println(getFilesDir());
@@ -141,14 +150,18 @@ public class HoofdScherm extends Activity {
         if (weekRooster == null) {
             weekRooster = rHandler.setupRooster2(ga, getApplicationContext(), this);
         }
-        if (lesdag != null) {
-            rHandler.setupNotifications(lesdag);
+        if (constants.getLesdag() != null) {
+            rHandler.setupNotifications(constants.getLesdag());
         }
         String nextLes = rHandler.getNextLesTime();
-        if (nextLes != null && volgendeLesText != null) {
-            volgendeLesText.setText(nextLes);
+        if (nextLes != null) {
+            if (volgendeLesText != null) {
+                volgendeLesText.setText(nextLes);
+            } else {
+                System.out.println("HoofdScherm: volgendeLesText is null");
+            }
         } else {
-            System.out.println("HoofdScherm: nextLes or volgendeLesText is null");
+            System.out.println("HoofdScherm: nextLes is null");
         }
 
 
