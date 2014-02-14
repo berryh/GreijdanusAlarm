@@ -168,6 +168,15 @@ public class RoosterHandler {
         //System.out.println(notification.toCalendar(Locale.ROOT).getTimeInMillis());
         //System.out.println(System.currentTimeMillis());
         // am.set(AlarmManager.RTC_WAKEUP, notification.toCalendar(Locale.ROOT).getTimeInMillis(), pi);
+        if (!Constants.instance().pendingIntents.isEmpty()) {
+            Iterator iterator = Constants.instance().pendingIntents.iterator();
+            while (iterator.hasNext()) {
+                PendingIntent pendingIntent = (PendingIntent) iterator.next();
+                am.cancel(pendingIntent);
+            }
+            Constants.instance().pendingIntents.clear();
+        }
+
 
         if (lesdag == null) {
             System.out.println("RoosterHandler: lesdag is null");
@@ -187,14 +196,18 @@ public class RoosterHandler {
             if (jIn.getStart().isAfterNow() || jIn.getStart().isEqualNow()) {
                 Intent in1 = new Intent(ct, NotificationReceiver.class);
                 in1.putExtra("state", true);
+                in1.setAction("berryh.android.greijdanusalarm.LES_UUR1" + j);
                 PendingIntent pi1 = PendingIntent.getBroadcast(ct, j, in1, PendingIntent.FLAG_UPDATE_CURRENT);
                 am.set(AlarmManager.RTC_WAKEUP, jIn.getStartMillis(), pi1);
+                Constants.instance().pendingIntents.add(pi1);
             }
             if (jIn.getEnd().isAfterNow() || jIn.getEnd().isEqualNow()) {
                 Intent in2 = new Intent(ct, NotificationReceiver.class);
                 in2.putExtra("state", false);
+                in2.setAction("berryh.android.greijdanusalarm.LES_UUR2" + j);
                 PendingIntent pi2 = PendingIntent.getBroadcast(ct, j ^ 2, in2, PendingIntent.FLAG_UPDATE_CURRENT);
                 am.set(AlarmManager.RTC_WAKEUP, jIn.getEndMillis(), pi2);
+                Constants.instance().pendingIntents.add(pi2);
             }
         }
 

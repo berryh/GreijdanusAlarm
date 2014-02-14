@@ -36,7 +36,7 @@ public class NotificationReceiver extends BroadcastReceiver {
         Notification notification = mBuilder.build();
         notification.defaults |= Notification.DEFAULT_SOUND;
         notification.defaults |= Notification.DEFAULT_VIBRATE;
-        //notification.flags |= Notification.FLAG_AUTO_CANCEL;
+        notification.flags |= Notification.FLAG_AUTO_CANCEL;
 
         mNotificationManager.notify(1, notification);
     }

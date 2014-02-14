@@ -1,11 +1,15 @@
 package berryh.android.greijdanusalarm.lib;
 
+import android.app.PendingIntent;
 import android.telephony.TelephonyManager;
 import berryh.android.greijdanusalarm.Enums.EnumDagen;
 import berryh.android.greijdanusalarm.GreijdanusAlarm;
 import berryh.android.greijdanusalarm.HoofdScherm;
 import berryh.android.greijdanusalarm.InstellingenScherm;
 import org.joda.time.DateTime;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Berry Holtrust on 22-1-14.
@@ -20,6 +24,7 @@ public class Constants {
     private DateTime dt = new DateTime();
     private TelephonyManager telephonyManager;
     private EnumDagen lesdag;
+    public List<PendingIntent> pendingIntents = new ArrayList<>();
 
     public static Constants instance() {
         return INSTANCE;
