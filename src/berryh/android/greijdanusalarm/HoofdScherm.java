@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -46,6 +47,10 @@ public class HoofdScherm extends Activity {
             constants.setLesdag(EnumDagen.MAANDAG);
         } else {
             constants.setLesdag(Dagen.getCurrentDag());
+        }
+
+        if (BuildConfig.DEBUG) {
+            Log.e("GreijdanusAlarm", "This application is running in DEBUG Mode!");
         }
 
         System.out.println("Debug Mode: " + constants.isDebug());
