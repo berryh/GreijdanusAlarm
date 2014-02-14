@@ -67,7 +67,6 @@
                 <version>3.8.0</version>
                 <configuration>
                     <sdk>
-                        <path>G:\Program Files (x86)\Android\sdk</path>
                         <platform>17</platform>
                     </sdk>
                     <undeployBeforeDeploy>true</undeployBeforeDeploy>
