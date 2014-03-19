@@ -11,5 +11,6 @@
         het vakje en druk op opslaan als alles is ingevuld
     </string>
     <string name="instellingenscherm_button_save_text">Opslaan</string>
+    <string name="menu_item_close">Afsluiten</string>
 
 </resources>
