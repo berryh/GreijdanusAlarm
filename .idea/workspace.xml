@@ -55,33 +55,13 @@
           <theme>@style/AppTheme</theme>
         </config>
       </layout>
-      <layout url="file://$PROJECT_DIR$/res/menu/hoofd_scherm.xml">
-        <config>
-          <device>Nexus 4</device>
-          <theme>@style/AppTheme</theme>
-        </config>
-      </layout>
     </layouts>
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: berryh.android.greijdanusalarm" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aeccbf56-561d-4540-927a-f4e02180e7cb" name="Default" comment="Fixing Bugs and doing some pre-release cleanup.">
-      <change type="DELETED" beforePath="E:\Android\GreijdanusAlarm\src\berryh\android\greijdanusalarm\Roosters\DagRoosterBase.java" afterPath="" />
-      <change type="DELETED" beforePath="E:\Android\GreijdanusAlarm\src\berryh\android\greijdanusalarm\Roosters\UrenBase.java" afterPath="" />
-      <change type="DELETED" beforePath="E:\Android\GreijdanusAlarm\src\berryh\android\greijdanusalarm\Roosters\WeekRoosterBase.java" afterPath="" />
-      <change type="DELETED" beforePath="E:\Android\GreijdanusAlarm\src\berryh\android\greijdanusalarm\Service\DailySetupReceiver.java" afterPath="" />
-      <change type="DELETED" beforePath="E:\Android\GreijdanusAlarm\src\berryh\android\greijdanusalarm\Service\RoosterService.java" afterPath="" />
-      <change type="DELETED" beforePath="E:\Android\GreijdanusAlarm\src\berryh\android\greijdanusalarm\roosterTypes\RoosterTemplateDag.java" afterPath="" />
-      <change type="DELETED" beforePath="E:\Android\GreijdanusAlarm\src\berryh\android\greijdanusalarm\roosterTypes\RoosterTemplateLesUur.java" afterPath="" />
-      <change type="DELETED" beforePath="E:\Android\GreijdanusAlarm\src\berryh\android\greijdanusalarm\roosterTypes\RoosterTemplateTimeHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="E:\Android\GreijdanusAlarm\src\berryh\android\greijdanusalarm\roosterTypes\RoosterTemplateWeek.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/berryh/android/greijdanusalarm/HoofdScherm.java" afterPath="$PROJECT_DIR$/src/berryh/android/greijdanusalarm/HoofdScherm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/berryh/android/greijdanusalarm/Handler/RoosterHandler.java" afterPath="$PROJECT_DIR$/src/berryh/android/greijdanusalarm/Handler/RoosterHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/menu/hoofd_scherm.xml" afterPath="$PROJECT_DIR$/res/menu/hoofd_scherm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
+    <list default="true" id="aeccbf56-561d-4540-927a-f4e02180e7cb" name="Default" comment="Merged Re">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="GreijdanusAlarm.iws" />
@@ -149,33 +129,20 @@
       <file leaf-file-name="WeekRooster.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/berryh/android/greijdanusalarm/jtRooster/WeekRooster.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+            <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="561">
               <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RoosterHandler.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/berryh/android/greijdanusalarm/Handler/RoosterHandler.java">
+      <file leaf-file-name="Constants.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/berryh/android/greijdanusalarm/lib/Constants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2388" max-vertical-offset="2975">
-              <caret line="108" column="29" selection-start-line="108" selection-start-column="29" selection-end-line="108" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="1836">
+              <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
               <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hoofd_scherm.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/menu/hoofd_scherm.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding>
-                <element signature="e#198#232#0" expanded="true" />
-                <element signature="e#358#383#0" expanded="true" />
+                <marker date="1395231990910" expanded="true" signature="551:599" placeholder="/**...*/" />
               </folding>
             </state>
           </provider>
@@ -184,21 +151,9 @@
       <file leaf-file-name="HoofdScherm.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/berryh/android/greijdanusalarm/HoofdScherm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1377" max-vertical-offset="2057">
-              <caret line="53" column="12" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2142" max-vertical-offset="2312">
+              <caret line="126" column="9" selection-start-line="126" selection-start-column="9" selection-end-line="126" selection-end-column="9" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.53125" vertical-offset="0" max-vertical-offset="765">
-              <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
-              <folding>
-                <element signature="e#1279#1301#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -206,11 +161,9 @@
       <file leaf-file-name="InstellingenScherm.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/berryh/android/greijdanusalarm/InstellingenScherm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4233" max-vertical-offset="4862">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2006" max-vertical-offset="5117">
               <caret line="118" column="13" selection-start-line="118" selection-start-column="13" selection-end-line="118" selection-end-column="13" />
-              <folding>
-                <element signature="e#3908#4121#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -218,28 +171,18 @@
       <file leaf-file-name="DagRooster.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/berryh/android/greijdanusalarm/jtRooster/DagRooster.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1785">
+            <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1870">
               <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DownloadTask.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="DownloadTask.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/berryh/android/greijdanusalarm/Service/DownloadTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NotificationReceiver.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/berryh/android/greijdanusalarm/Service/NotificationReceiver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="155" max-vertical-offset="1037">
-              <caret line="45" column="52" selection-start-line="45" selection-start-column="52" selection-end-line="45" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.5303293" vertical-offset="51" max-vertical-offset="986">
+              <caret line="28" column="76" selection-start-line="28" selection-start-column="76" selection-end-line="29" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -248,7 +191,7 @@
       <file leaf-file-name="UrenHandler.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/berryh/android/greijdanusalarm/lib/UrenHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1224">
+            <state vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="1394">
               <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
               <folding />
             </state>
@@ -262,23 +205,14 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
-  <component name="GenerateSignedApkSettings">
-    <option name="KEY_STORE_PATH" value="E:\Android\GreijdanusAlarm\data\signing.jks" />
-    <option name="KEY_ALIAS" value="GreijdanusAlarmKey" />
-    <option name="REMEMBER_PASSWORDS" value="true" />
-  </component>
   <component name="Git.Settings">
     <option name="SYNC_SETTING" value="DONT" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+        <option value="$PROJECT_DIR$/res/menu/hoofd_scherm.xml" />
         <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/src/berryh/android/greijdanusalarm/roosterTypes/RoosterTemplate.java" />
         <option value="$PROJECT_DIR$/src/berryh/android/greijdanusalarm/roosterTypes/RoosterTemplateWeek.java" />
@@ -308,19 +242,18 @@
         <option value="$PROJECT_DIR$/src/berryh/android/greijdanusalarm/Service/RoosterIntentService.java" />
         <option value="$PROJECT_DIR$/src/berryh/android/greijdanusalarm/Service/DailySetupReceiver.java" />
         <option value="$PROJECT_DIR$/GreijdanusAlarm.iml" />
+        <option value="$PROJECT_DIR$/src/berryh/android/greijdanusalarm/Handler/RoosterHandler.java" />
         <option value="$PROJECT_DIR$/src/berryh/android/greijdanusalarm/Service/NotificationReceiver.java" />
         <option value="$PROJECT_DIR$/src/berryh/android/greijdanusalarm/lib/INIFile.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/berryh/android/greijdanusalarm/lib/Constants.java" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/berryh/android/greijdanusalarm/Service/DownloadTask.java" />
         <option value="$PROJECT_DIR$/src/berryh/android/greijdanusalarm/InstellingenScherm.java" />
         <option value="$PROJECT_DIR$/src/berryh/android/greijdanusalarm/jtRooster/DagRooster.java" />
+        <option value="$PROJECT_DIR$/src/berryh/android/greijdanusalarm/HoofdScherm.java" />
         <option value="$PROJECT_DIR$/src/berryh/android/greijdanusalarm/lib/UrenHandler.java" />
         <option value="$PROJECT_DIR$/buildNumber.properties" />
-        <option value="$PROJECT_DIR$/src/berryh/android/greijdanusalarm/Handler/RoosterHandler.java" />
-        <option value="$PROJECT_DIR$/res/menu/hoofd_scherm.xml" />
-        <option value="$PROJECT_DIR$/src/berryh/android/greijdanusalarm/HoofdScherm.java" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
       </list>
     </option>
   </component>
@@ -388,8 +321,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -514,40 +445,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GreijdanusAlarm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GreijdanusAlarm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GreijdanusAlarm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GreijdanusAlarm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -596,9 +497,6 @@
     <property name="DEBUGGABLE_DEVICE" value="FA2CXW110144" />
     <property name="DEBUGGABLE_PROCESS" value="berryh.android.greijdanusalarm" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
-    <property name="ExportedModule" value="GreijdanusAlarm" />
-    <property name="ExportedApkPath" value="E:\Android\GreijdanusAlarm\GreijdanusAlarm.apk" />
-    <property name="AndroidRunProguardForReleaseBuild" value="false" />
   </component>
   <component name="RunManager" selected="Android Application.GreijdanusAlarm">
     <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
@@ -858,11 +756,7 @@
       <created>1392396843036</created>
       <updated>1392396843036</updated>
     </task>
-    <task id="LOCAL-00013" summary="Fixing Bugs and doing some pre-release cleanup.">
-      <created>1395249289595</created>
-      <updated>1395249289595</updated>
-    </task>
-    <option name="localTasksCounter" value="14" />
+    <option name="localTasksCounter" value="13" />
     <option name="createChangelist" value="false" />
     <option name="createBranch" value="false" />
     <servers>
@@ -920,9 +814,8 @@
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32814237" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32777777" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39933258" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -930,19 +823,20 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16666667" sideWeight="0.5008264" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32814237" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16666667" sideWeight="0.5005537" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32369298" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31590655" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32814237" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24920128" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15191898" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16257995" sideWeight="0.49833888" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16257995" sideWeight="0.49833888" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3259177" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="true" internal_type="SLIDING" type="FLOATING" visible="false" weight="0.32960597" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" x="92" y="92" width="1736" height="856" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963374" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32369298" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39977852" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1013,6 +907,72 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/berryh/android/greijdanusalarm/jtRooster/WeekRooster.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/berryh/android/greijdanusalarm/lib/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="1836">
+          <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+          <folding>
+            <marker date="1395231990910" expanded="true" signature="551:599" placeholder="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/berryh/android/greijdanusalarm/HoofdScherm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2142" max-vertical-offset="2312">
+          <caret line="126" column="9" selection-start-line="126" selection-start-column="9" selection-end-line="126" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/berryh/android/greijdanusalarm/InstellingenScherm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2006" max-vertical-offset="5117">
+          <caret line="118" column="13" selection-start-line="118" selection-start-column="13" selection-end-line="118" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/berryh/android/greijdanusalarm/jtRooster/DagRooster.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1870">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/berryh/android/greijdanusalarm/Service/DownloadTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="986">
+          <caret line="28" column="76" selection-start-line="28" selection-start-column="76" selection-end-line="29" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/berryh/android/greijdanusalarm/lib/UrenHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="1394">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/berryh/android/greijdanusalarm/lib/UrenHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="1394">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/google/android/android/4.1.1.4/android-4.1.1.4.jar!/android/app/AlarmManager.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.55495495" vertical-offset="15" max-vertical-offset="595">
@@ -1206,10 +1166,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.7226149" vertical-offset="18966" max-vertical-offset="20043">
+          <caret line="1173" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/google/android/android/4.1.1.4/android-4.1.1.4-sources.jar!/android/os/MessageQueue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="515">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/berryh/android/greijdanusalarm/Service/NotificationReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1173">
+          <caret line="45" column="52" selection-start-line="45" selection-start-column="52" selection-end-line="45" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -1242,8 +1216,16 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1054">
           <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
           <folding>
-            <marker date="1395231990910" expanded="true" signature="-1:-1" placeholder="/**...*/" />
+            <marker date="1395231990910" expanded="true" signature="551:599" placeholder="/**...*/" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23168655" vertical-offset="0" max-vertical-offset="765">
+          <caret line="8" column="65" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1251,9 +1233,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="4233" max-vertical-offset="4862">
           <caret line="118" column="13" selection-start-line="118" selection-start-column="13" selection-end-line="118" selection-end-column="13" />
-          <folding>
-            <element signature="e#3908#4121#0" expanded="true" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/berryh/android/greijdanusalarm/HoofdScherm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2142" max-vertical-offset="2312">
+          <caret line="126" column="9" selection-start-line="126" selection-start-column="9" selection-end-line="126" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1265,11 +1253,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/berryh/android/greijdanusalarm/Handler/RoosterHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3077" max-vertical-offset="4896">
+          <caret line="181" column="65" selection-start-line="181" selection-start-column="65" selection-end-line="181" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/buildNumber.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.05862069" vertical-offset="0" max-vertical-offset="580">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1289,74 +1283,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9396092" vertical-offset="19412" max-vertical-offset="24378">
-          <caret line="1173" column="0" selection-start-line="1173" selection-start-column="0" selection-end-line="1173" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/berryh/android/greijdanusalarm/Service/DownloadTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5303293" vertical-offset="51" max-vertical-offset="986">
+          <caret line="28" column="76" selection-start-line="28" selection-start-column="76" selection-end-line="29" selection-end-column="29" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/berryh/android/greijdanusalarm/Service/NotificationReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="155" max-vertical-offset="1037">
-          <caret line="45" column="52" selection-start-line="45" selection-start-column="52" selection-end-line="45" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/berryh/android/greijdanusalarm/Handler/RoosterHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2388" max-vertical-offset="2975">
-          <caret line="108" column="29" selection-start-line="108" selection-start-column="29" selection-end-line="108" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/menu/hoofd_scherm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="e#198#232#0" expanded="true" />
-            <element signature="e#358#383#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/android/android/4.1.1.4/android-4.1.1.4-sources.jar!/android/util/Log.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.028960818" vertical-offset="0" max-vertical-offset="587">
-          <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/berryh/android/greijdanusalarm/HoofdScherm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1377" max-vertical-offset="2057">
-          <caret line="53" column="12" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53125" vertical-offset="0" max-vertical-offset="765">
-          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
-          <folding>
-            <element signature="e#1279#1301#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
