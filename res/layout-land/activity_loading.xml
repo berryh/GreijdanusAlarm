@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:background="@color/Grey"
+                android:gravity="center_vertical|center_horizontal">
+
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:src="@drawable/greijdanuslogoblank" android:contentDescription="Greijdanus Logo"
+            android:cropToPadding="false" android:scaleType="fitStart"
+            android:paddingRight="25dp"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentTop="true" android:paddingLeft="25dp" android:paddingTop="25dp"/>
+    <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar" android:layout_gravity="center_horizontal"
+            android:layout_centerHorizontal="true" android:layout_alignParentEnd="false"
+            android:layout_alignParentBottom="true" android:paddingBottom="50dp"/>
+</RelativeLayout>

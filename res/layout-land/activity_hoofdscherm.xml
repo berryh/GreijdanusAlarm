@@ -1,0 +1,40 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                tools:context=".HoofdScherm">
+
+    <DigitalClock
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true" android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="false" android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="false" android:layout_alignParentRight="false"
+            android:layout_alignWithParentIfMissing="false" android:id="@+id/hoofdscherm_klok"
+            android:layout_alignLeft="@+id/hoofdscherm_textview_huidige_tijd" android:paddingLeft="50dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/hoofdscherm_huidige_tijd"
+            android:id="@+id/hoofdscherm_textview_huidige_tijd" android:layout_above="@+id/hoofdscherm_klok"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentLeft="true" android:paddingLeft="50dp"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:textAppearance="?android:attr/textAppearanceLarge" android:text="@string/hoofdscherm_huidige_tijd"
+              android:id="@+id/hoofdscherm_textview_tijd_volgende_les" android:layout_above="@+id/hoofdscherm_klok"
+              android:layout_centerHorizontal="true"
+              android:layout_alignParentRight="true" android:paddingRight="50dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/hoofdscherm_textview_tijd_volgende_les_actual"
+            android:text="00:00"
+            android:paddingRight="50dp" android:layout_centerVertical="true"
+            android:layout_alignRight="@+id/hoofdscherm_textview_tijd_volgende_les"/>
+</RelativeLayout>
