@@ -6,197 +6,219 @@
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="1"
-            android:id="@+id/textView"
-            android:layout_alignParentEnd="false"
-            android:layout_alignParentStart="false"
-            android:layout_marginLeft="10dp"
-            android:layout_alignLeft="@+id/tableLayout" android:layout_below="@+id/textView8"
-            android:layout_marginRight="12.5dp"/>
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-              android:textAppearance="?android:attr/textAppearanceSmall" android:text="2"
-              android:id="@+id/textView2"
-              android:layout_alignParentEnd="false"
-              android:layout_alignParentStart="false"
-              android:layout_alignTop="@+id/textView"
-              android:layout_marginLeft="12dp"
-              android:layout_toRightOf="@+id/textView" android:layout_marginRight="12.5dp"/>
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-              android:textAppearance="?android:attr/textAppearanceSmall" android:text="3"
-              android:id="@+id/textView3"
-              android:layout_alignParentEnd="false"
-              android:layout_alignParentStart="false"
-              android:layout_marginLeft="12dp"
-              android:layout_alignTop="@+id/textView"
-              android:layout_toRightOf="@+id/textView2" android:layout_marginRight="12.5dp"/>
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-              android:textAppearance="?android:attr/textAppearanceSmall" android:text="4"
-              android:id="@+id/textView4"
-              android:layout_alignParentEnd="false"
-              android:layout_alignParentStart="false"
-              android:layout_centerHorizontal="true"
-              android:layout_marginLeft="12dp"
-              android:layout_alignTop="@+id/textView" android:layout_toRightOf="@+id/textView3"
-              android:layout_marginRight="12.5dp"/>
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-              android:textAppearance="?android:attr/textAppearanceSmall" android:text="5"
-              android:id="@+id/textView5"
-              android:layout_alignParentEnd="false"
-              android:layout_alignParentStart="false"
-              android:layout_marginLeft="12dp"
-              android:layout_alignTop="@+id/textView" android:layout_toRightOf="@+id/textView4"
-              android:layout_marginRight="12.5dp"/>
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-              android:textAppearance="?android:attr/textAppearanceSmall" android:text="6"
-              android:id="@+id/textView6"
-              android:layout_toRightOf="@+id/textView5"
-              android:layout_alignParentEnd="false"
-              android:layout_alignParentStart="false"
-              android:layout_marginLeft="12dp"
-              android:layout_alignTop="@+id/textView" android:layout_marginRight="12.5dp"/>
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-              android:textAppearance="?android:attr/textAppearanceSmall" android:text="7"
-              android:id="@+id/textView7"
-              android:layout_toRightOf="@+id/textView6"
-              android:layout_alignParentEnd="false"
-              android:layout_alignParentStart="false"
-              android:layout_marginLeft="12dp"
-              android:layout_alignTop="@+id/textView" android:layout_marginRight="12.5dp"/>
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Lesuur"
             android:id="@+id/textView8" android:layout_alignParentTop="true" android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp"/>
-    <TextView
+    <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Maandag"
-            android:id="@+id/textView9" android:layout_alignParentLeft="true"
-            android:paddingTop="13dp" android:layout_below="@+id/textView" android:paddingLeft="10dp"/>
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-              android:textAppearance="?android:attr/textAppearanceSmall" android:text="Dinsdag"
-              android:id="@+id/textView10" android:layout_below="@+id/textView9" android:layout_alignParentLeft="true"
-              android:paddingTop="13dp" android:paddingLeft="10dp"/>
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-              android:textAppearance="?android:attr/textAppearanceSmall" android:text="Woensdag"
-              android:id="@+id/textView11" android:layout_below="@+id/textView10"
-              android:layout_alignParentLeft="true" android:paddingTop="13dp" android:paddingLeft="10dp"/>
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-              android:textAppearance="?android:attr/textAppearanceSmall" android:text="Donderdag"
-              android:id="@+id/textView12" android:layout_below="@+id/textView11"
-              android:layout_alignParentLeft="true" android:paddingTop="13dp" android:paddingLeft="10dp"/>
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-              android:textAppearance="?android:attr/textAppearanceSmall" android:text="Vrijdag"
-              android:id="@+id/textView13" android:layout_below="@+id/textView12"
-              android:layout_alignParentLeft="true" android:paddingTop="13dp" android:paddingLeft="10dp"/>
-    <TableLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView" android:layout_centerHorizontal="true" android:id="@+id/tableLayout"
-            android:layout_toRightOf="@+id/textView12">
-        <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/rowMaandag">
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/ma1" android:layout_column="2"/>
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/ma2" android:layout_column="3"/>
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/ma3" android:layout_column="4"/>
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/ma4" android:layout_column="5"/>
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/ma5" android:layout_column="6"/>
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/ma6" android:layout_column="7"/>
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/ma7" android:layout_column="8"/>
-        </TableRow>
-        <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/rowDinsdag">
-            <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/di1" android:layout_column="2"/>
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/di2" android:layout_column="3"/>
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/di3" android:layout_column="4"/>
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/di4" android:layout_column="5"/>
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/di5" android:layout_column="6"/>
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/di6" android:layout_column="7"/>
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/di7" android:layout_column="8"/>
-        </TableRow>
-        <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/rowWoensdag">
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/wo1" android:layout_column="2"/>
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/wo2" android:layout_column="3"/>
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/wo3" android:layout_column="4"/>
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/wo4" android:layout_column="5"/>
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/wo5" android:layout_column="6"/>
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/wo6" android:layout_column="7"/>
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/wo7" android:layout_column="8"/>
-        </TableRow>
-        <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content"
-                  android:id="@+id/rowDonderdag">
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/do1" android:layout_column="2"/>
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/do2" android:layout_column="3"/>
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/do3" android:layout_column="4"/>
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/do4" android:layout_column="5"/>
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/do5" android:layout_column="6"/>
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/do6" android:layout_column="7"/>
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/do7" android:layout_column="8"/>
-        </TableRow>
-        <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/rowVrijdag">
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/vr1" android:layout_column="2"/>
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/vr2" android:layout_column="3"/>
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/vr3" android:layout_column="4"/>
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/vr4" android:layout_column="5"/>
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/vr5" android:layout_column="6"/>
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/vr6" android:layout_column="7"/>
-            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/vr7" android:layout_column="8"/>
-        </TableRow>
-    </TableLayout>
+            android:layout_height="wrap_content" android:layout_below="@+id/textView8"
+            android:id="@+id/horizontalLayout" android:layout_centerHorizontal="true">
+        <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView8" android:layout_centerHorizontal="true"
+                android:id="@+id/tableLayout"
+                android:layout_alignParentRight="false" android:measureWithLargestChild="false"
+                >
+            <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="1"
+                        android:id="@+id/textView"
+                        android:layout_alignParentEnd="false"
+                        android:layout_alignParentStart="false"
+                        android:layout_marginLeft="10dp"
+                        android:layout_alignLeft="@+id/tableLayout" android:layout_below="@+id/textView8"
+                        android:layout_marginRight="12.5dp" android:layout_column="2"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:textAppearance="?android:attr/textAppearanceSmall" android:text="2"
+                          android:id="@+id/textView2"
+                          android:layout_alignParentEnd="false"
+                          android:layout_alignParentStart="false"
+                          android:layout_alignTop="@+id/textView"
+                          android:layout_marginLeft="12dp"
+                          android:layout_toRightOf="@+id/textView" android:layout_marginRight="12.5dp"
+                        />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:textAppearance="?android:attr/textAppearanceSmall" android:text="3"
+                          android:id="@+id/textView3"
+                          android:layout_alignParentEnd="false"
+                          android:layout_alignParentStart="false"
+                          android:layout_marginLeft="12dp"
+                          android:layout_alignTop="@+id/textView"
+                          android:layout_toRightOf="@+id/textView2" android:layout_marginRight="12.5dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:textAppearance="?android:attr/textAppearanceSmall" android:text="4"
+                          android:id="@+id/textView4"
+                          android:layout_alignParentEnd="false"
+                          android:layout_alignParentStart="false"
+                          android:layout_centerHorizontal="true"
+                          android:layout_marginLeft="12dp"
+                          android:layout_alignTop="@+id/textView" android:layout_toRightOf="@+id/textView3"
+                          android:layout_marginRight="12.5dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:textAppearance="?android:attr/textAppearanceSmall" android:text="5"
+                          android:id="@+id/textView5"
+                          android:layout_alignParentEnd="false"
+                          android:layout_alignParentStart="false"
+                          android:layout_marginLeft="12dp"
+                          android:layout_alignTop="@+id/textView" android:layout_toRightOf="@+id/textView4"
+                          android:layout_marginRight="12.5dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:textAppearance="?android:attr/textAppearanceSmall" android:text="6"
+                          android:id="@+id/textView6"
+                          android:layout_toRightOf="@+id/textView5"
+                          android:layout_alignParentEnd="false"
+                          android:layout_alignParentStart="false"
+                          android:layout_marginLeft="12dp"
+                          android:layout_alignTop="@+id/textView" android:layout_marginRight="12.5dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:textAppearance="?android:attr/textAppearanceSmall" android:text="7"
+                          android:id="@+id/textView7"
+                          android:layout_toRightOf="@+id/textView6"
+                          android:layout_alignParentEnd="false"
+                          android:layout_alignParentStart="false"
+                          android:layout_marginLeft="12dp"
+                          android:layout_alignTop="@+id/textView" android:layout_marginRight="12.5dp"/>
+            </TableRow>
+            <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content"
+                      android:id="@+id/rowMaandag">
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Maandag"
+                        android:id="@+id/textView9" android:layout_alignParentLeft="true"
+                        android:paddingTop="13dp" android:layout_below="@+id/textView" android:paddingLeft="10dp"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/ma1" android:layout_column="2"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/ma2" android:layout_column="3"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/ma3" android:layout_column="4"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/ma4" android:layout_column="5"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/ma5" android:layout_column="6"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/ma6" android:layout_column="7"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/ma7" android:layout_column="8"/>
+            </TableRow>
+            <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content"
+                      android:id="@+id/rowDinsdag">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:textAppearance="?android:attr/textAppearanceSmall" android:text="Dinsdag"
+                          android:id="@+id/textView10" android:layout_below="@+id/textView9"
+                          android:layout_alignParentLeft="true"
+                          android:paddingTop="13dp" android:paddingLeft="10dp"/>
+                <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/di1" android:layout_column="2"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/di2" android:layout_column="3"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/di3" android:layout_column="4"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/di4" android:layout_column="5"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/di5" android:layout_column="6"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/di6" android:layout_column="7"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/di7" android:layout_column="8"/>
+            </TableRow>
+            <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content"
+                      android:id="@+id/rowWoensdag">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:textAppearance="?android:attr/textAppearanceSmall" android:text="Woensdag"
+                          android:id="@+id/textView11" android:layout_below="@+id/textView10"
+                          android:layout_alignParentLeft="true" android:paddingTop="13dp" android:paddingLeft="10dp"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/wo1" android:layout_column="2"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/wo2" android:layout_column="3"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/wo3" android:layout_column="4"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/wo4" android:layout_column="5"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/wo5" android:layout_column="6"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/wo6" android:layout_column="7"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/wo7" android:layout_column="8"/>
+            </TableRow>
+            <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content"
+                      android:id="@+id/rowDonderdag">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:textAppearance="?android:attr/textAppearanceSmall" android:text="Donderdag"
+                          android:id="@+id/textView12" android:layout_below="@+id/textView11"
+                          android:layout_alignParentLeft="true" android:paddingTop="13dp" android:paddingLeft="10dp"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/do1" android:layout_column="2"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/do2" android:layout_column="3"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/do3" android:layout_column="4"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/do4" android:layout_column="5"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/do5" android:layout_column="6"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/do6" android:layout_column="7"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/do7" android:layout_column="8"/>
+            </TableRow>
+            <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content"
+                      android:id="@+id/rowVrijdag">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:textAppearance="?android:attr/textAppearanceSmall" android:text="Vrijdag"
+                          android:id="@+id/textView13" android:layout_below="@+id/textView12"
+                          android:layout_alignParentLeft="true" android:paddingTop="13dp" android:paddingLeft="10dp"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/vr1" android:layout_column="2"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/vr2" android:layout_column="3"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/vr3" android:layout_column="4"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/vr4" android:layout_column="5"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/vr5" android:layout_column="6"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/vr6" android:layout_column="7"/>
+                <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/vr7" android:layout_column="8"/>
+            </TableRow>
+        </TableLayout>
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/instellingenscherm_button_save_text"
+                android:id="@+id/btnSave"
+                android:layout_marginRight="10dp" android:layout_alignParentRight="true"
+                android:layout_centerVertical="true" android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"/>
+    </LinearLayout>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="@string/instellingenscherm_uitleg_werking"
-            android:id="@+id/textView14" android:layout_below="@+id/tableLayout"
-            android:layout_centerHorizontal="true" android:layout_marginTop="15dp"
-            android:paddingLeft="25dp" android:paddingRight="25dp"/>
-    <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/instellingenscherm_button_save_text"
-            android:id="@+id/btnSave"
-            android:layout_below="@+id/textView11" android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" android:layout_marginRight="50dp"/>
+            android:id="@+id/textView14"
+            android:paddingLeft="25dp" android:paddingRight="25dp" android:layout_alignParentBottom="false"
+            android:layout_alignParentLeft="false" android:layout_alignParentStart="false"
+            android:layout_alignParentEnd="false" android:layout_alignParentRight="false"
+            android:layout_below="@id/horizontalLayout" android:layout_alignParentTop="false"
+            android:layout_alignWithParentIfMissing="false" android:paddingTop="5dp"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

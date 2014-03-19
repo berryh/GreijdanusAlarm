@@ -213,6 +213,11 @@ public class InstellingenScherm extends Activity {
             case R.id.menu_item_instellingen_hoofdscherm:
                 save();
                 startActivity(new Intent(this, HoofdScherm.class));
+                finish();
+                return true;
+            case R.id.menu_item_instellingen_close:
+                save();
+                moveTaskToBack(true);
                 return true;
         }
 

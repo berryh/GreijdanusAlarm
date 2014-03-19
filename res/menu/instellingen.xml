@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item android:id="@+id/menu_item_instellingen_hoofdscherm" android:title="@string/menu_option_hoofdscherm"></item>
-    
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_item_instellingen_hoofdscherm" android:title="@string/menu_option_hoofdscherm"/>
+    <item android:id="@+id/menu_item_instellingen_close" android:title="@string/menu_item_close"/>
+
 
 </menu>

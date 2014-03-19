@@ -112,7 +112,7 @@ public class HoofdScherm extends Activity {
                 startActivity(new Intent(this, InstellingenScherm.class));
                 return true;
             case R.id.menu_item_hoofdscherm_close:
-                finish();
+                moveTaskToBack(true);
                 return true;
         }
         return false;
