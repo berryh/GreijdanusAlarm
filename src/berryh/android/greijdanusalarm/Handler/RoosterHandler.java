@@ -196,6 +196,7 @@ public class RoosterHandler {
             if (jIn.getStart().isAfterNow() || jIn.getStart().isEqualNow()) {
                 Intent in1 = new Intent(ct, NotificationReceiver.class);
                 in1.putExtra("state", true);
+                in1.putExtra("notTime", jIn.getStartMillis());
                 in1.setAction("berryh.android.greijdanusalarm.LES_UUR1" + j);
                 PendingIntent pi1 = PendingIntent.getBroadcast(ct, j, in1, PendingIntent.FLAG_UPDATE_CURRENT);
                 am.set(AlarmManager.RTC_WAKEUP, jIn.getStartMillis(), pi1);
@@ -204,6 +205,7 @@ public class RoosterHandler {
             if (jIn.getEnd().isAfterNow() || jIn.getEnd().isEqualNow()) {
                 Intent in2 = new Intent(ct, NotificationReceiver.class);
                 in2.putExtra("state", false);
+                in2.putExtra("notTime", jIn.getEndMillis());
                 in2.setAction("berryh.android.greijdanusalarm.LES_UUR2" + j);
                 PendingIntent pi2 = PendingIntent.getBroadcast(ct, j ^ 2, in2, PendingIntent.FLAG_UPDATE_CURRENT);
                 am.set(AlarmManager.RTC_WAKEUP, jIn.getEndMillis(), pi2);

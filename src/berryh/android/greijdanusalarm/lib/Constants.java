@@ -7,6 +7,9 @@ import berryh.android.greijdanusalarm.GreijdanusAlarm;
 import berryh.android.greijdanusalarm.HoofdScherm;
 import berryh.android.greijdanusalarm.InstellingenScherm;
 import org.joda.time.DateTime;
+import org.joda.time.Interval;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +20,8 @@ import java.util.List;
 public class Constants {
 
     private static final Constants INSTANCE = new Constants();
+    public List<PendingIntent> pendingIntents = new ArrayList<>();
+    public List<Interval> lestijden = new ArrayList<>();
     private boolean isDebug = false;
     private HoofdScherm hoofdscherm;
     private GreijdanusAlarm greijdanusalarm;
@@ -24,7 +29,8 @@ public class Constants {
     private DateTime dt = new DateTime();
     private TelephonyManager telephonyManager;
     private EnumDagen lesdag;
-    public List<PendingIntent> pendingIntents = new ArrayList<>();
+    private DateTimeFormatter dtFormatter = DateTimeFormat.forPattern("ddMMyyyy");
+    private boolean isVMinuten = false;
 
     public static Constants instance() {
         return INSTANCE;
@@ -80,5 +86,17 @@ public class Constants {
 
     public void setLesdag(EnumDagen lesdag) {
         this.lesdag = lesdag;
+    }
+
+    public DateTimeFormatter getDtFormatter() {
+        return dtFormatter;
+    }
+
+    public boolean isVMinuten() {
+        return isVMinuten;
+    }
+
+    public void setVMinuten(boolean isVMinuten) {
+        this.isVMinuten = isVMinuten;
     }
 }

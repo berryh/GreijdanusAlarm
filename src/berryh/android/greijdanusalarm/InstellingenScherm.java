@@ -56,11 +56,11 @@ public class InstellingenScherm extends Activity {
     private CheckBox vr6;
     private CheckBox vr7;
     private GreijdanusAlarm ga = Constants.instance().getGreijdanusalarm();
-    private List<Boolean> maandag = new ArrayList<Boolean>();
-    private List<Boolean> dinsdag = new ArrayList<Boolean>();
-    private List<Boolean> woensdag = new ArrayList<Boolean>();
-    private List<Boolean> donderdag = new ArrayList<Boolean>();
-    private List<Boolean> vrijdag = new ArrayList<Boolean>();
+    private List<Boolean> maandag = new ArrayList<>();
+    private List<Boolean> dinsdag = new ArrayList<>();
+    private List<Boolean> woensdag = new ArrayList<>();
+    private List<Boolean> donderdag = new ArrayList<>();
+    private List<Boolean> vrijdag = new ArrayList<>();
     private JSONObject settings = new JSONObject();
 
     @Override
@@ -121,6 +121,7 @@ public class InstellingenScherm extends Activity {
 
     }
 
+    @SuppressWarnings("all")
     private void setupFromFile() {
         List<Boolean> lMaandag = null;
         List<Boolean> lDinsdag = null;
@@ -219,6 +220,7 @@ public class InstellingenScherm extends Activity {
 
     }
 
+    @SuppressWarnings("unchecked")
     private void save() {
 
         TextView status = (TextView) findViewById(R.id.status);
@@ -267,11 +269,7 @@ public class InstellingenScherm extends Activity {
 
 
         if (settings == null) {
-            System.out.println("InstellingenScherm: ga is null");
-            return;
-        }
-        if (settings == null) {
-            System.out.println("InstellingenScherm: ga.les is null");
+            System.out.println("InstellingenScherm: settings is null");
             return;
         }
 
