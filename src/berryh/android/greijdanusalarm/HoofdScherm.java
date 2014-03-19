@@ -63,9 +63,9 @@ public class HoofdScherm extends Activity {
         Bundle extras = super.getIntent().getExtras();
         if (extras != null && extras.getBoolean("notification")) {
             if (extras.getBoolean("les")) {
-                Toast.makeText(this, "Je hebt dit uur les!", 5).show();
+                Toast.makeText(this, "Je hebt dit uur les", 5).show();
             } else {
-                Toast.makeText(this, "Je hebt dit uur geen les!", 5).show();
+                Toast.makeText(this, "Je hebt nu pauze", 5).show();
             }
         }
         setContentView(R.layout.activity_hoofdscherm);
