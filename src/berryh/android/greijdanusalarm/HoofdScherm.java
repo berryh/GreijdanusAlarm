@@ -1,13 +1,17 @@
 package berryh.android.greijdanusalarm;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
 import android.widget.TextView;
 import android.widget.Toast;
 import berryh.android.greijdanusalarm.Enums.Dagen;
@@ -29,6 +33,7 @@ public class HoofdScherm extends Activity {
     //private SimpleDateFormat parser = new SimpleDateFormat("HH:mm");
     private GreijdanusAlarm ga = (GreijdanusAlarm) super.getApplication();
     private boolean settingsExist = false;
+    private Dialog progressDialog;
     //private Bundle bundle;
 
 
@@ -36,6 +41,7 @@ public class HoofdScherm extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        showProgressDialog(this);
         //this.bundle = savedInstanceState;
         //setContentView(R.layout.activity_hoofdscherm);
         setContentView(R.layout.activity_loading);
@@ -54,7 +60,9 @@ public class HoofdScherm extends Activity {
             Log.e("GreijdanusAlarm", "This application is released in DEBUG mode. Please notify the author.");
         }
         System.out.println("Debug Mode: " + constants.isDebug());
-        UrenHandler.instance().setupUren();
+        if (isNetworkOnline()) {
+            UrenHandler.instance().setupUren();
+        }
     }
 
     @Override
@@ -95,7 +103,9 @@ public class HoofdScherm extends Activity {
         } else {
             System.out.println("HoofdScherm: nextLes is null");
         }
-
+        if (progressDialog.isShowing()) {
+            progressDialog.dismiss();
+        }
 
     }
 
@@ -125,6 +135,40 @@ public class HoofdScherm extends Activity {
             case 1:
                 settingsExist = true;
         }
+    }
+
+    private void showProgressDialog(Activity activity) {
+        if ((progressDialog == null) || (!progressDialog.isShowing())) {
+            progressDialog = new Dialog(activity);
+            progressDialog.getWindow().getCurrentFocus();
+            progressDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            progressDialog.setContentView(R.layout.activity_loading);
+            progressDialog.setCancelable(false);
+            progressDialog.setOwnerActivity(activity);
+            progressDialog.show();
+        } else {
+            progressDialog.setOwnerActivity(activity);
+        }
+    }
+
+    public boolean isNetworkOnline() {
+        boolean status = false;
+        try {
+            ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo netInfo = cm.getNetworkInfo(0);
+            if (netInfo != null && netInfo.getState() == NetworkInfo.State.CONNECTED) {
+                status = true;
+            } else {
+                netInfo = cm.getNetworkInfo(1);
+                if (netInfo != null && netInfo.getState() == NetworkInfo.State.CONNECTED)
+                    status = true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+        return status;
+
     }
 
 }

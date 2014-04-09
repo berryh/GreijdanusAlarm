@@ -163,7 +163,7 @@ public class RoosterHandler {
                 System.out.println("RoosterHandler: isBeforeNow() or isEqualNow()");
                 DateTimeFormatter fmt = DateTimeFormat.forPattern("kk:mm");
                 System.out.println("RoosterHandler: fmt Time: " + fmt.print(jIn.getStart()));
-                return fmt.print(jIn.getStart());
+                return fmt.print((jIn.getStart().plusMinutes(2)));
             }
         }
         return null;
